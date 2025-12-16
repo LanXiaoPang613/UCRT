@@ -26,32 +26,18 @@ To train on the CIFAR dataset(https://www.cs.toronto.edu/~kriz/cifar.html), run 
 
 ```shell
 # stage one for CDN noise
-python Train_cifar_psscl_stage1_new1.py --r 0.2 --noise_mode 'sym' --lambda_u 0 --data_path './data/cifar-10-batches-py' --dataset 'cifar10' --num_class 10
+python Train_cifar_ucrt_stage1.py --r 0.2 --noise_mode 'sym' --data_path './data/cifar-10-batches-py' --dataset 'cifar10' --num_class 10
 # stage two for CDN noise
-python Train_cifar_psscl_stage2_new1.py --r 0.2 --noise_mode 'sym' --lambda_u 0 --data_path './data/cifar-10-batches-py' --dataset 'cifar10' --num_class 10
-```
-
-```shell
-# stage one for PMD Type-I IDN noise
-python Train_cifar_psscl_stage1_new1_idn.py --noise_mode '1' --lambda_u 30 --data_path './data/cifar-10-batches-py' --dataset 'cifar10' --num_class 10
-# stage two for PMD Type-I IDN noise
-python Train_cifar_psscl_stage2_new1_idn.py --noise_mode '1' --lambda_u 30 --data_path './data/cifar-10-batches-py' --dataset 'cifar10' --num_class 10
-```
-
-```shell
-# stage one for RoG RN IDN noise
-python Train_cifar_psscl_stage1_new1_idn_rog.py --noise_mode '1' --lambda_u 30 --data_path './data/cifar-10-batches-py' --dataset 'cifar10' --num_class 10
-# stage two for RoG RN IDN noise
-python Train_cifar_psscl_stage2_new1_idn_rog.py --noise_mode '1' --lambda_u 30 --data_path './data/cifar-10-batches-py' --dataset 'cifar10' --num_class 10
+python Train_cifar_ucrt_stage2.py --r 0.2 --noise_mode 'sym' --data_path './data/cifar-10-batches-py' --dataset 'cifar10' --num_class 10
 ```
 
 To train on the Animal-10N dataset(https://dm.kaist.ac.kr/datasets/animal-10n/), run the following command:
 
 ```shell
 # stage one for Animal-10N
-python Train_animal_psscl_stage1.py --lambda_u 0 --data_path './data/Animal-10N' --dataset 'animal10N' --num_class 10
+python Train_animal_ucrt_stage1.py --data_path './data/Animal-10N' --dataset 'animal10N' --num_class 10
 # stage two for Animal-10N
-python Train_animal_psscl_stage2.py --lambda_u 0 --data_path './data/Animal-10N' --dataset 'animal10N' --num_class 10
+python Train_animal_ucrt_stage2.py --data_path './data/Animal-10N' --dataset 'animal10N' --num_class 10
 ```
 
 ## Citation
